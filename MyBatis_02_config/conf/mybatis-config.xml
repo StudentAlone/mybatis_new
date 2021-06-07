@@ -85,6 +85,11 @@
 		 type="DB_VENDOR"：VendorDatabaseIdProvider
 		 	作用就是得到数据库厂商的标识(驱动getDatabaseProductName())，mybatis就能根据数据库厂商标识来执行不同的sql;
 		 	MySQL，Oracle，SQL Server,xxxx
+		使用时候，需要配置sql映射xml文件中databaseId属性，比如	
+		<select id="getEmpById" resultType="com.atguigu.mybatis.bean.Employee"
+			databaseId="mysql">
+		select * from tbl_employee where id = #{id}
+	</select>
 	  -->
 	<databaseIdProvider type="DB_VENDOR">
 		<!-- 为不同的数据库厂商起别名 -->
